@@ -48,7 +48,7 @@ typedef NS_ENUM(NSInteger, AFNetworkReachabilityStatus) {
  @warning Instances of `AFNetworkReachabilityManager` must be started with `-startMonitoring` before reachability status can be determined.
  */
 @interface AFNetworkReachabilityManager : NSObject
-
+- (instancetype)init NS_UNAVAILABLE;
 /**
  The current network reachability status.
  */
