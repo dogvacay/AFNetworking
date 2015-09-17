@@ -95,7 +95,7 @@
  */
 
 @interface AFURLConnectionOperation : NSOperation <NSURLConnectionDelegate, NSURLConnectionDataDelegate, NSSecureCoding, NSCopying>
-
+- (instancetype)init NS_UNAVAILABLE;
 ///-------------------------------
 /// @name Accessing Run Loop Modes
 ///-------------------------------
