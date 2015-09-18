@@ -554,14 +554,14 @@ static NSLock* imageLock = nil;
 
 @end
 
-static UIImage * AFImageWithDataAtScale(NSData *data, CGFloat scale) {
-    UIImage *image = [UIImage af_safeImageWithData:data];
-    if (image.images) {
-        return image;
-    }
-    
-    return [[UIImage alloc] initWithCGImage:[image CGImage] scale:scale orientation:image.imageOrientation];
-}
+//static UIImage * AFImageWithDataAtScale(NSData *data, CGFloat scale) {
+//    UIImage *image = [UIImage af_safeImageWithData:data];
+//    if (image.images) {
+//        return image;
+//    }
+//    
+//    return [[UIImage alloc] initWithCGImage:[image CGImage] scale:scale orientation:image.imageOrientation];
+//}
 
 static UIImage * AFInflatedImageFromResponseWithDataAtScale(NSHTTPURLResponse *response, NSData *data, CGFloat scale) {
     if (!data || [data length] == 0) {
@@ -590,7 +590,7 @@ static UIImage * AFInflatedImageFromResponseWithDataAtScale(NSHTTPURLResponse *r
 
     CGDataProviderRelease(dataProvider);
 
-    UIImage *image = AFImageWithDataAtScale(data, scale);
+    UIImage *image = [UIImage imageWithData:data];//AFImageWithDataAtScale(data, scale);
     if (!imageRef) {
         if (image.images || !image) {
             return image;
